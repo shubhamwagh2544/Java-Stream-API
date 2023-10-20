@@ -3,6 +3,7 @@ package com.streams.java8.queries;
 import com.streams.java8.beans.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.List;
 
 @Repository
 public interface ExerciseOne extends JpaRepository<Person, Integer> {
+    List<Person> findAllByAgeLessThanEqual(int age);
+    List<Person> findFirst10ByAgeLessThanEqual(int age);
 
     @Query(
             value = """
@@ -25,8 +28,12 @@ public interface ExerciseOne extends JpaRepository<Person, Integer> {
 
     @Query(
             value = """
-                    
-                    """
+                    select *
+                    from person
+                    where age <= :age
+                    limit 10
+                    """,
+            nativeQuery = true
     )
-    List<Person> findAllByAgeLessThanEqual(int age);
+    List<Person> selectAllPersonWhoseAgeIsLessThanLimit(@Param("age") int age);
 }

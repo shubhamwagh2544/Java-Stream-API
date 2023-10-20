@@ -1,6 +1,20 @@
+##
 What is stream ?
 
 - Simply, an abstraction
 - focuses on ALL instead on PARTS
 - imperative to FUNCTIONAL programming (chaining together)
 - used with Collections
+
+##
+How to use Stream
+
+- Start with concrete implementation
+    - arrays
+    - sets
+    - lists
+    - maps
+- call .stream() on the concrete type
+- we can concatenate stream to one another to form chain
+- this chain of stream is ABSTRACTION
+- then we go back to concrete implementation again (like list, object, optional, string, int)
