@@ -1,7 +1,13 @@
 package com.streams.java8.beans;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "car")
 public class Car {
+  @Id
   private final Integer id;
   private final String make;
   private final String model;

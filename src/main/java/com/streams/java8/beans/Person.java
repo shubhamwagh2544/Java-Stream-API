@@ -1,7 +1,13 @@
 package com.streams.java8.beans;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "person")
 public class Person {
+  @Id
   final Integer id;
   final String firstName;
   final String lastName;

@@ -1,20 +1,23 @@
 package com.streams.java8.exercise;
 
+import com.streams.java8.beans.Person;
+import com.streams.java8.mockdata.MockData;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 // 1. Find people aged less or equal 18
 // 2. Then change implementation to find first 10 people
-public class ExerciseOne {
-
+class ExerciseOne {
     @Test
-    public void imperativeApproach() throws IOException {
+    void imperativeApproach() throws IOException {
+        List<Person> personList = MockData.getPeople();
 
     }
 
     @Test
-    public void declarativeApproachUsingStreams() throws Exception {
-        System.out.println("hey");
+    void declarativeApproachUsingStreams() throws Exception {
+
     }
 }
