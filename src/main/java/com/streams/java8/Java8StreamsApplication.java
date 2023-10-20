@@ -1,6 +1,8 @@
 package com.streams.java8;
 
+import com.streams.java8.beans.Car;
 import com.streams.java8.mockdata.MockData;
+import com.streams.java8.queries.ExerciseFive;
 import com.streams.java8.queries.ExerciseFour;
 import com.streams.java8.queries.ExerciseOne;
 import com.streams.java8.queries.ExerciseThree;
@@ -21,12 +23,14 @@ public class Java8StreamsApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(ExerciseOne exerciseOne,
 										ExerciseThree exerciseThree,
-										ExerciseFour exerciseFour) {
+										ExerciseFour exerciseFour,
+										ExerciseFive exerciseFive) {
 		return args -> {
 			//save all first
 			//exerciseOne.saveAll(MockData.getPeople());
 			//exerciseThree.saveAll(MockData.getPeople());
-			exerciseFour.saveAll(MockData.getPeople());
+			//exerciseFour.saveAll(MockData.getPeople());
+			exerciseFive.saveAll(MockData.getCars());
 
 			/*
 			exerciseOne.selectAllPersonWhoseAgeIsLessThan(18)
@@ -56,11 +60,23 @@ public class Java8StreamsApplication {
 			System.out.println(maxAge);
 			 */
 
+			/*
 			List<Integer> list = exerciseFour.selectDistinctAgeFromPerson();
 			List<Integer> list1 = exerciseFour.selectDistinctAgeFromPersonNativeQuery();
 
 			System.out.println(list1.size());
 			System.out.println(list.size());
+			 */
+
+
+			List<Car> pinkCars = exerciseFive.findAllByPriceLessThanEqualAndColor(50000.00, "Pink");
+			System.out.println(pinkCars.size());
+
+			List<Car> pinkCars1 = exerciseFive.selectCarWithPriceLessThanAndColorPinkNativeQuery(50000.00, "Pink");
+			System.out.println(pinkCars1.size());
+
+			List<Car> pinkCars2 = exerciseFive.selectCarWithPriceLessThanAndColorPink(50000.00, "Pink");
+			System.out.println(pinkCars2.size());
 		};
 	}
 
