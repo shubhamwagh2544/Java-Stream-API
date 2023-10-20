@@ -2,6 +2,8 @@ package com.streams.java8;
 
 import com.streams.java8.mockdata.MockData;
 import com.streams.java8.queries.ExerciseOne;
+import com.streams.java8.queries.ExerciseThree;
+import org.apache.commons.io.TaggedIOException;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,25 +17,32 @@ public class Java8StreamsApplication {
 	}
 
 	@Bean
-	CommandLineRunner commandLineRunner(ExerciseOne exerciseOne) {
+	CommandLineRunner commandLineRunner(ExerciseOne exerciseOne,
+										ExerciseThree exerciseThree) {
 		return args -> {
 			//save all first
-			exerciseOne.saveAll(MockData.getPeople());
+			//exerciseOne.saveAll(MockData.getPeople());
+			exerciseThree.saveAll(MockData.getPeople());
 
+			/*
+			exerciseOne.selectAllPersonWhoseAgeIsLessThan(18)
+					.forEach(System.out::println);
 
-			//exerciseOne.selectAllPersonWhoseAgeIsLessThan(18)
-			//		.forEach(System.out::println);
+			exerciseOne.findAllByAgeLessThanEqual(18)
+					.forEach(System.out::println);
 
-			//exerciseOne.findAllByAgeLessThanEqual(18)
-			//		.forEach(System.out::println);
+			exerciseOne.selectAllPersonWhoseAgeIsLessThanLimit(18)
+					.forEach(System.out::println);
 
-			//exerciseOne.selectAllPersonWhoseAgeIsLessThanLimit(18)
-			//		.forEach(System.out::println);
+			exerciseOne.findFirst10ByAgeLessThanEqual(18)
+					.forEach(System.out::println);
+			*/
 
-			//exerciseOne.findFirst10ByAgeLessThanEqual(18)
-			//		.forEach(System.out::println);
+			Integer min = exerciseThree.selectMinAgeFromPersonNativeQuery();
+			System.out.println(min);
 
-
+			Integer minimum = exerciseThree.selectMinAgeFromPerson();
+			System.out.println(minimum);
 		};
 	}
 
