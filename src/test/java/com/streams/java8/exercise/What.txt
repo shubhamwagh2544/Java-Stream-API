@@ -1,4 +1,5 @@
 What is stream ?
+
 - Simply, an abstraction
 - focuses on ALL instead on PARTS
 - imperative to FUNCTIONAL programming (chaining together)
