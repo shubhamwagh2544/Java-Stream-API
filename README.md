@@ -9,3 +9,4 @@ concepts covered :
 - exercise 5 - filter
 - exercise 6 - map
 - exercise 7 - avg
+- exercise 8 - findAny + findFirst
