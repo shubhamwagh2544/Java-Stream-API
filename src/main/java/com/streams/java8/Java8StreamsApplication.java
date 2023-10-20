@@ -3,7 +3,6 @@ package com.streams.java8;
 import com.streams.java8.mockdata.MockData;
 import com.streams.java8.queries.ExerciseOne;
 import com.streams.java8.queries.ExerciseThree;
-import org.apache.commons.io.TaggedIOException;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -36,13 +35,23 @@ public class Java8StreamsApplication {
 
 			exerciseOne.findFirst10ByAgeLessThanEqual(18)
 					.forEach(System.out::println);
-			*/
+			 */
 
+			/*
 			Integer min = exerciseThree.selectMinAgeFromPersonNativeQuery();
 			System.out.println(min);
 
 			Integer minimum = exerciseThree.selectMinAgeFromPerson();
 			System.out.println(minimum);
+
+			Integer max = exerciseThree.selectMaxAgeFromPersonNativeQuery();
+			System.out.println(max);
+
+			Integer maxAge = exerciseThree.selectMaxAgeFromPerson();
+			System.out.println(maxAge);
+			 */
+
+
 		};
 	}
 

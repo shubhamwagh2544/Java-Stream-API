@@ -28,4 +28,21 @@ public interface ExerciseThree extends JpaRepository<Person, Integer> {
     )
     Integer selectMinAgeFromPerson();
 
+    @Query(
+            value = """
+                    select max(age)
+                    from person
+                    """,
+            nativeQuery = true
+    )
+    Integer selectMaxAgeFromPersonNativeQuery();
+
+    @Query(
+            value = """
+                    select max(p.age)
+                    from Person p
+                    """
+    )
+    Integer selectMaxAgeFromPerson();
+
 }
