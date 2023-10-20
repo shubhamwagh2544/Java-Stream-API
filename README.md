@@ -8,3 +8,4 @@ concepts covered :
 - exercise 4 - distinct
 - exercise 5 - filter
 - exercise 6 - map
+- exercise 7 - avg
