@@ -10,3 +10,6 @@ concepts covered :
 - exercise 6 - map
 - exercise 7 - avg
 - exercise 8 - findAny + findFirst
+- exercise 9 - count + min + max + sum + avg + statistics
+- exercise 10 - groupingBy + counting
+- exercise 11 - reduce

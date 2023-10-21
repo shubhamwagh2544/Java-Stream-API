@@ -1,6 +1,7 @@
 package com.streams.java8;
 
 import com.streams.java8.beans.Car;
+import com.streams.java8.beans.CarMakeDTO;
 import com.streams.java8.mockdata.MockData;
 import com.streams.java8.queries.*;
 import org.springframework.boot.CommandLineRunner;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootApplication
 public class Java8StreamsApplication {
@@ -24,15 +26,17 @@ public class Java8StreamsApplication {
 										ExerciseFour exerciseFour,
 										ExerciseFive exerciseFive,
 										ExerciseSeven exerciseSeven,
-										ExerciseNine exerciseNine) {
+										ExerciseNine exerciseNine,
+										ExerciseTen exerciseTen) {
 		return args -> {
 			//save all first
 			//exerciseOne.saveAll(MockData.getPeople());
 			//exerciseThree.saveAll(MockData.getPeople());
-			exerciseFour.saveAll(MockData.getPeople());
+			//exerciseFour.saveAll(MockData.getPeople());
 			//exerciseFive.saveAll(MockData.getCars());
 			//exerciseSeven.saveAll(MockData.getCars());
-			exerciseNine.saveAll(MockData.getCars());
+			//exerciseNine.saveAll(MockData.getCars());
+			exerciseTen.saveAll(MockData.getCars());
 
 
 			/*
@@ -90,7 +94,7 @@ public class Java8StreamsApplication {
 			System.out.println(avg2);
 			 */
 
-
+			/*
 			Double countOfFemales1 = exerciseFour.selectCountOfFemales1("female");
 			Double countOfFemales2 = exerciseFour.selectCountOfFemales2("female");
 			Double countOfFemales3 = exerciseFour.selectCountOfFemales3("female");
@@ -109,6 +113,13 @@ public class Java8StreamsApplication {
 
 			Double yellowCarWithLowestPrice = exerciseNine.selectYellowCarWithLowestPrice("yellow");
 			System.out.println(yellowCarWithLowestPrice);
+			 */
+
+			/*
+			exerciseTen.selectCarsByMaker();
+			 */
+
+
 		};
 	}
 

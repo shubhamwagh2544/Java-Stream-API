@@ -22,3 +22,50 @@ How to use Stream
 ###
 findAny() : Non Deterministic :- not necessarily returns same ans
 findFirst() : Deterministic :- always returns same ans
+
+##
+The GROUP BY clause is used to group rows in a SQL query based on the values in one or more columns.
+It's often used in conjunction with aggregate functions (SUM, COUNT, AVG, MAX, MIN) to summarize and analyze data.
+
+Group By Use Cases :
+1. Aggregating Data
+
+    SELECT Product, Region, SUM(Revenue) AS TotalRevenue
+    FROM Sales
+    GROUP BY Product, Region;
+
+2. Counting Occurrences
+
+    SELECT Department, COUNT(*) AS EmployeeCount
+    FROM Employees
+    GROUP BY Department;
+
+3. Finding Maximum or Minimum Values
+
+    SELECT Department, MAX(Salary) AS MaxSalary
+    FROM Employees
+    GROUP BY Department;
+
+4. Data Segmentation
+
+    SELECT CASE
+        WHEN Age < 30 THEN 'Under 30'
+        WHEN Age < 60 THEN '30-59'
+        ELSE '60 and Over'
+    END AS AgeGroup, COUNT(*) AS CustomerCount
+    FROM Customers
+    GROUP BY AgeGroup;
+
+5. Filtering Groups
+
+    SELECT Product, SUM(Revenue) AS TotalRevenue
+    FROM Sales
+    GROUP BY Product
+    HAVING TotalRevenue > 10000;
+
+6. Eliminating Duplicate Data
+
+    SELECT Email
+    FROM Contacts
+    GROUP BY Email;
+
