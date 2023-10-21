@@ -22,13 +22,17 @@ public class Java8StreamsApplication {
 										ExerciseThree exerciseThree,
 										ExerciseFour exerciseFour,
 										ExerciseFive exerciseFive,
-										ExerciseSeven exerciseSeven) {
+										ExerciseSeven exerciseSeven,
+										ExerciseNine exerciseNine) {
 		return args -> {
 			//save all first
 			//exerciseOne.saveAll(MockData.getPeople());
 			//exerciseThree.saveAll(MockData.getPeople());
-			//exerciseFour.saveAll(MockData.getPeople());
+			exerciseFour.saveAll(MockData.getPeople());
 			//exerciseFive.saveAll(MockData.getCars());
+			//exerciseSeven.saveAll(MockData.getCars());
+			exerciseNine.saveAll(MockData.getCars());
+
 
 			/*
 			exerciseOne.selectAllPersonWhoseAgeIsLessThan(18)
@@ -77,11 +81,21 @@ public class Java8StreamsApplication {
 			System.out.println(pinkCars2.size());
 			 */
 
+			/*
 			Double avg1 = exerciseSeven.selectAverageOfCarPrices();
 			Double avg2 = exerciseSeven.selectAverageOfCarPricesNativeQuery();
 
 			System.out.println(avg1);
 			System.out.println(avg2);
+			 */
+
+
+			Double countOfFemales1 = exerciseFour.selectCountOfFemales1("female");
+			Double countOfFemales2 = exerciseFour.selectCountOfFemales2("female");
+			Double countOfFemales3 = exerciseFour.selectCountOfFemales3("female");
+			System.out.println(countOfFemales1);
+			System.out.println(countOfFemales2);
+			System.out.println(countOfFemales3);
 		};
 	}
 
