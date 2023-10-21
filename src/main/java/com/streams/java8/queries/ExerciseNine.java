@@ -20,21 +20,21 @@ public interface ExerciseNine extends JpaRepository<Car, Integer> {
             value = """
                     select min(price)
                     from car
-                    where color = :color
+                    where color ilike :color
                     """,
             nativeQuery = true
     )
-    Car selectYellowCarWithLowestPrice(@Param("color") String color);
+    Double selectYellowCarWithLowestPrice(@Param("color") String color);
 
     @Query(
             value = """
                     select max(price)
                     from car
-                    where color = :color
+                    where color ilike :color
                     """,
             nativeQuery = true
     )
-    Car selectYellowCarWithHighestPrice(@Param("color") String color);
+    Double selectYellowCarWithHighestPrice(@Param("color") String color);
 
     @Query(
             value = """

@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @SpringBootApplication
@@ -96,6 +97,18 @@ public class Java8StreamsApplication {
 			System.out.println(countOfFemales1);
 			System.out.println(countOfFemales2);
 			System.out.println(countOfFemales3);
+
+			Double avgCarPrice = exerciseNine.selectAverageOfCarPrices();
+			System.out.println(avgCarPrice);
+
+			BigDecimal bigDecimalSumCarPrices = exerciseNine.selectSumOfCarPrices();
+			System.out.println(bigDecimalSumCarPrices);
+
+			Double yellowCarWithHighestPrice = exerciseNine.selectYellowCarWithHighestPrice("yellow");
+			System.out.println(yellowCarWithHighestPrice);
+
+			Double yellowCarWithLowestPrice = exerciseNine.selectYellowCarWithLowestPrice("yellow");
+			System.out.println(yellowCarWithLowestPrice);
 		};
 	}
 
