@@ -13,3 +13,6 @@ concepts covered :
 - exercise 9 - count + min + max + sum + avg + statistics
 - exercise 10 - groupingBy + counting
 - exercise 11 - reduce
+- exercise 12 - flatMap
+- exercise 13 - joining
+- exercise 14 - Collectors.toList

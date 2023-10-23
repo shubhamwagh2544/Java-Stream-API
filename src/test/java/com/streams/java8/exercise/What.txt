@@ -19,7 +19,7 @@ How to use Stream
 - this chain of stream is ABSTRACTION
 - then we go back to concrete implementation again (like list, object, optional, string, int)
 
-###
+##
 findAny() : Non Deterministic :- not necessarily returns same ans
 findFirst() : Deterministic :- always returns same ans
 
@@ -69,3 +69,47 @@ Group By Use Cases :
     FROM Contacts
     GROUP BY Email;
 
+##
+FlatMap Uses :
+1. Flattening Nested Collections
+2. Transforming and Flattening Elements
+
+##
+Intermediate and Terminal operations :
+1. Intermediate : Produces Stream
+    - operations that transform one stream into another
+    - lazy operations
+        - don't execute entire stream immediately
+        - only setup pipeline of operations to be performed
+        - this pipeline is executed on demand and depending on terminal operation
+
+    - ex. filtering, mapping, sorting, distincting, limiting
+
+2. Terminal : Consume Stream
+    - operations that produce a final result or a side effect
+    - can have only one terminal operation (which closes stream)
+    - collect, forEach, count, reduce, and toArray
+
+##
+In a stream pipeline, the order of intermediate operations matters.
+Each intermediate operation is executed in the order they appear in the pipeline
+
+ex. map -> limit : first map is executed to return new stream,
+                   then limit is executed to limit stream result to 3 elements
+
+##
+Short Circuit Methods :
+- are special intermediate and terminal operations that provide a way to optimize stream processing
+- by allowing the stream to stop processing elements as soon as a certain condition is met
+- improving performance
+
+1. Intermediate Short-Circuit Operations
+- limit
+- distinct
+
+2. Terminal Short-Circuit Operations
+- anyMatch(Predicate<T> predicate)
+- allMatch(Predicate<T> predicate)
+- noneMatch(Predicate<T> predicate)
+- findAny()
+- findFirst()
